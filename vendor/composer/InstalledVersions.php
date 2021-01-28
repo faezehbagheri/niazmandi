@@ -24,12 +24,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'v5.7.0',
-    'version' => '5.7.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '6e7298423176a9e269aacf076cf80914434d9579',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -424,12 +424,12 @@ private static $installed = array (
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => 'v5.7.0',
-      'version' => '5.7.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '6e7298423176a9e269aacf076cf80914434d9579',
     ),
     'laravel/nexmo-notification-channel' => 
     array (
@@ -457,6 +457,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'ad571aacbac1539c30d480908f9d0c9614eaf1a7',
+    ),
+    'laravelcollective/html' => 
+    array (
+      'pretty_version' => 'v5.7.1',
+      'version' => '5.7.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '777b6d390811ba249255ed5750bf17a019cd88a5',
     ),
     'lcobucci/jwt' => 
     array (
@@ -789,8 +798,8 @@ private static $installed = array (
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache' => 

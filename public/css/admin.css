@@ -10,7 +10,7 @@ body{
     src: url('Vazir.eot?#iefix') format('embedded-opentype'),
     url('Vazir.woff') format('woff'),
     url('Vazir.ttf') format('truetype');
-    font-weight: normal;           
+    font-weight: normal;
 }
 
 .page_sidebar{
@@ -22,7 +22,7 @@ body{
 
 #sidebar_menu{
     padding: 0px;
-    margin-top: 20px;
+    margin-top: 60px;
 }
 
 #sidebar_menu li a{
@@ -31,4 +31,245 @@ body{
     border-bottom: 1px solid rgba(255, 255, 255, 0.27);
     display: block;
     padding: 10px;
+}
+
+.fa-angle-left{
+    float: left;
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+.child_menu{
+    padding-top: 10px !important;
+    display: none;
+    background-color: #292929;
+}
+
+.child_menu a{
+    width: 100%;
+    font-size: 13px;
+    border-bottom: 0px !important;
+    padding-top: 5px !important;
+}
+
+.page_sidebar .fa-bars{
+    color: white;
+    font-size: 18px;
+    float: left;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.toggled{
+    width: 50px !important;
+}
+
+.toggled .sidebar_menu_span{
+    display: none;
+}
+
+.toggled .fa-angle-left{
+    display: none;
+}
+
+.toggled .fa-angle-down{
+    display: none;
+}
+
+.toggled #sidebar_menu li a{
+    text-align: center;
+}
+
+.page_content{
+    padding-right: 225px;
+    padding-top: 50px;
+}
+
+.toggled .child_menu{
+    margin-right: 50px !important;
+    width: 160px !important;
+    position: absolute;
+    margin-top: -44px;
+    border-right: 1px solid rgba(255, 255, 255, 0.27);
+}
+
+.toggled .child_menu a{
+    text-align: right !important;
+}
+
+#sidebar_menu .active{
+    background-color: #e02222 !important;
+    color: white;
+}
+
+.container-fluid{
+    padding-right: 0px !important;
+    padding-left: 0px !important ;
+}
+
+#sidebar_menu .active .child_menu{
+    display: block;
+}
+
+.content_box{
+    width: 98%;
+    margin: auto;
+}
+
+.panel{
+    background-color: white;
+    width: 100%;
+    border: 1px solid #292929;
+    border-radius: 3px;
+}
+
+.panel .header{
+    background-color: #292929;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+}
+
+.panel .panel_content{
+    padding: 30px;
+}
+
+.form-control{
+    width: 250px !important;
+    /* border-right: 0px; */
+    border-radius: 0px;
+    display: inline-block;
+}
+
+label{
+    width: 130px;
+}
+
+.has_error{
+    font-size: 13px;
+    color: red;
+}
+
+input[type=file]{
+    direction: ltr;
+}
+
+.bootstrap-select > .dropdown-toggle{
+    width: 250px;
+}
+
+.bootstrap-select .btn-light{
+    background-color: white !important;
+    border: 1px solid #ced4da !important;
+}
+
+.bootstrap-select .dropdown-toggle .filter-option{
+    text-align: right;
+}
+
+.bootstrap-select > .dropdown-toggle{
+    text-align: left;
+}
+
+.bootstrap-select .dropdown-menu{
+    text-align: right;
+    /* overflow-x: hidden; */
+}
+
+.bootstrap-select .show{
+    width: 250px !important;
+}
+
+.table{
+    margin-top: 30px;
+}
+
+.table tr th,
+.table tr td{
+    text-align: center;
+}
+
+.table .fa-edit{
+    color: blue !important;
+}
+
+.table .fa-trash{
+    color: red !important;
+}
+
+
+.table-striped tbody tr:nth-of-type(2n+1){
+    background-color: rgba(0, 0, 0, .03);
+}
+
+.table .form-control{
+    width: 100%;
+}
+
+.pagination{
+    padding-right: 0px !important;
+}
+
+.message_div{
+    background-color: rgba(10, 10, 10, 0.5);
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    position: fixed;
+    width: 100%;
+    display: none;
+}
+
+.message_box{
+    background-color: white;
+    width: 300px;
+    height: 100px;
+    font-size: 13px;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    position: absolute;
+    margin: auto;
+    border-radius : 5px;
+    text-align: center;
+    padding: 20px;
+}
+
+.message_box .alert{
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.table .fa-eye{
+    color: black !important;
+}
+
+a{
+    text-decoration: none;
+}
+
+#item_box{
+    margin-bottom: 20px;
+}
+
+.add_item_btn{
+    display: none;
+    margin-top: 20px;
+}
+
+.add_item_text{
+    margin-top: 20px;
+    display: table;
+    cursor: pointer;
+}
+
+.add_item_text .fa-plus{
+    font-size: 16px;
+    color: red;
+}
+.fa-trash{
+    color: red;
+    cursor: pointer;
 }
