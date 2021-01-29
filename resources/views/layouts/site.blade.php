@@ -418,6 +418,116 @@
         })
     };
 
+    send_ads_form=function () {
+
+        const url=site_url+"ads/new";
+        const title=document.getElementById("ads_title").value;
+        const tozihat=document.getElementById("tozihat").value;
+        const token=$('meta[name="csrf-token"]').attr('content');
+        const form = document.createElement("form");
+        form.setAttribute("method", "POST");
+        form.setAttribute("action",url);
+        add_form_input(form,"title",title);
+        var filter_text_keys=filter_array_value.keys();
+        for(var i=0;i<filter_array_value.size;i++)
+        {
+            var key=filter_text_keys.next().value;
+            const k=key.replace('filter_','');
+            const Field = document.createElement("input");
+            const v='filter_id['+k+']';
+
+            var  value=filter_array_value.get(key);
+            if(value=='')
+            {
+                const input=document.getElementById(key);
+                value=input.value.trim();
+            }
+            Field.setAttribute("name",v);
+            Field.setAttribute("value",value);
+            form.appendChild(Field);
+        }
+        add_form_input(form,"cat1_id",cat1_id);
+        add_form_input(form,"cat2_id",cat2_id);
+        add_form_input(form,"cat3_id",cat3_id);
+        add_form_input(form,"tozihat",tozihat);
+        add_form_input(form,"location",location_id);
+        add_form_input(form,"images",image_url);
+        add_form_input(form,"_token",token);
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
+    };
+
+    add_form_input=function (form,name,value) {
+
+        var TokenField = document.createElement("input");
+        TokenField.setAttribute("name",name);
+        TokenField.setAttribute("value",value);
+        form.appendChild(TokenField);
+    };
+
+    validate_ads_form=function () {
+        var  status=true;
+        const ads_title=document.getElementById('ads_title');
+        if(!ads_title || ads_title.value.trim()=='')
+        {
+            status=false;
+            $("#title_error_message").html('لطفا عنوان آگهی را وارد نمایید');
+        }
+
+        const tozihat=document.getElementById('tozihat');
+        if(!tozihat || tozihat.value.trim()=='')
+        {
+            status=false;
+            $("#tozihat_error_message").html('لطفا توضیحات آگهی را وارد نمایید');
+        }
+
+        return status;
+    };
+
+    setAdsFilterEvent=function () {
+        var item=document.getElementsByClassName('item_ads');
+        for (var i=0;i<item.length;i++)
+        {
+            const id=item[i].id.replace('ads_item_','');
+            const span=$("#"+item[i].id+" span").text();
+            $("#"+item[i].id).click(function () {
+
+                var data=id.split('_');
+                set_filter(data[0],data[1],span);
+            })
+        }
+    };
+
+    $(".number").keydown(function (event) {
+
+        const keyCode=event.keyCode;
+        if((keyCode>=48 && keyCode<=57) || keyCode==8)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    });
+
+    $("#btn_active_code").click(function () {
+
+        var active_code=document.getElementById('active_code').value;
+        if(active_code.length==6)
+        {
+            $("#active_form").submit();
+        }
+    });
+
+    $(".active_form_span").click(function () {
+
+        $("#login_div").show();
+        $("#active_box").hide();
+        document.getElementById('active_code').value='';
+    });
+
 </script>
 </body>
 </html>

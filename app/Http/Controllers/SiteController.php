@@ -79,7 +79,6 @@ class SiteController extends Controller
         }
     }
 
-
     public function del_ads_img(Request $request)
     {
         $src=$request->get('src');
@@ -96,4 +95,58 @@ class SiteController extends Controller
         }
     }
 
+    public function create_ads(Request $request)
+    {
+        $redirect_login=false;
+        $images=$request->get('images');
+        $location=$request->get('location');
+        $location_array=explode('_',$location);
+        $filters=$request->get('filter_id');
+        $Ads=new Ads($request->all());
+        $Ads->view=0;
+        $user_id=$Ads->getUserId();
+
+        $url=str_replace('-','',$request->get('title'));
+        $url=str_replace('/','',$url);
+        $url=preg_replace('/\s+/','-',$url);
+        $Ads->url=$url;
+        if(!$user_id)
+        {
+            $user_id=uniqid('guest_');
+        }
+        if(!Auth::check())
+        {
+            $redirect_login=true;
+        }
+
+        $Ads->user_id=$user_id;
+
+        if(sizeof($location_array)==3)
+        {
+            $Ads->ostan_id=$location_array[0];
+            $Ads->shahr_id=$location_array[1];
+            $Ads->area_id=$location_array[2];
+
+            $Ads->save();
+
+            $Ads->createAdsImage($Ads->id,$images);
+            $Ads->createAdsFilters($Ads->id,$filters);
+        }
+        else
+        {
+            return redirect('/');
+        }
+
+        if($redirect_login)
+        {
+            return redirect('login')
+                ->withCookie(cookie()->forever('user_id',$user_id));
+        }
+        else
+        {
+            return redirect('list')->with('status','آگهی شما ثبت شده و بعد از تایید نمایش داده میشود ');
+        }
+
+
+    }
 }

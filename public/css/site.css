@@ -196,3 +196,66 @@ textarea{
     height:150px !important;
     resize:none;
 }
+
+.login_box{
+    width:450px;
+    background:white;
+    margin:50px auto;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    padding: 30px;
+}
+
+.login_box .btn-primary{
+    width:100% !important;
+}
+
+.login_box p{
+    padding-top: 10px;
+}
+
+.login_box .form-control{
+    text-align:left;
+}
+
+.number_input{
+    letter-spacing:45px;
+    border:none !important;
+    width:330px;
+    height:35px;
+    text-align:left !important;
+}
+
+.line {
+    width:45px;
+    height:1px;
+    background:#000;
+    float:right;
+    margin-left:10px;
+}
+
+.line_box{
+    width:330px;
+    margin:auto;
+    padding-bottom:30px;
+}
+
+.number_input_div{
+    width:380px;
+    margin:auto
+}
+
+.active_form_span{
+    font-size:14px;
+}
+
+.left{
+    float:left;
+}
+
+.active_form_span span{
+    cursor:pointer;
+}
+
+.color-gray{
+    color:gray;
+}

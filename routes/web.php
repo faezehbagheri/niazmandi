@@ -27,6 +27,14 @@ Route::prefix("admin")->group(function(){
 });
 
 Route::get('ads/new', 'SiteController@new_ads');
+Route::post('ads/new','SiteController@create_ads');
 Route::post('get_filter', 'SiteController@get_filter');
 Route::post('ads_image_upload','SiteController@ads_image_upload');
 Route::post('del_ads_img','SiteController@del_ads_img');
+
+//Auth::routes();
+
+
+Route::get('login','UserController@login_form')->name('login');
+Route::post('login','UserController@login');
+Route::post('active_code','UserController@active_code');

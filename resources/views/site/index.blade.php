@@ -33,9 +33,12 @@
         </div>
 
 
+        <div class="row" style="padding:15px">
+            <textarea class="form-control" id="tozihat" placeholder="توضیحات مناسبی را برای آگهی تان وارد نمایید"></textarea>
+            <p id="tozihat_error_message" class="has_error"></p>
+        </div>
+
         <h5>عکس های آگهی</h5>
-
-
         <div class="row" id="image_div_box" style="padding:20px">
 
             <div id="image_box">
@@ -79,7 +82,6 @@
             <input type="file" onchange="loadImage(event)" class="hidden_file_input" id="file_input1" accept="image/*">
 
         </div>
-
 
         <div class="form-group" style="margin-top: 20px;">
             <button class="btn btn-primary" id="add_ads_btn">ثبت آگهی</button>
