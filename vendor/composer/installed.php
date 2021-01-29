@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '6e7298423176a9e269aacf076cf80914434d9579',
+    'reference' => '9f433a58fe03d714881ba3d135d35bc3534a6bb4',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -356,6 +356,15 @@
         0 => 'v5.7.29',
       ),
     ),
+    'intervention/image' => 
+    array (
+      'pretty_version' => '2.5.1',
+      'version' => '2.5.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'abbf18d5ab8367f96b3205ca3c89fb2fa598c69e',
+    ),
     'jakub-onderka/php-console-color' => 
     array (
       'pretty_version' => 'v0.2',
@@ -406,7 +415,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '6e7298423176a9e269aacf076cf80914434d9579',
+      'reference' => '9f433a58fe03d714881ba3d135d35bc3534a6bb4',
     ),
     'laravel/nexmo-notification-channel' => 
     array (

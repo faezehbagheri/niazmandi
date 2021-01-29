@@ -6,10 +6,10 @@ body{
 
 @font-face {
     font-family: Vazir;
-    src: url('Vazir.eot');
-    src: url('Vazir.eot?#iefix') format('embedded-opentype'),
-    url('Vazir.woff') format('woff'),
-    url('Vazir.ttf') format('truetype');
+    src: url('../fonts/Vazir.eot');
+    src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Vazir.woff') format('woff'),
+    url('../fonts/Vazir.ttf') format('truetype');
     font-weight: normal;
 }
 
