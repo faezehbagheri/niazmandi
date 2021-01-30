@@ -11,9 +11,9 @@
             @endif
         </a>
 
-{{--        <a href="{{ url($value->id).'-'.$value->url }}">--}}
-{{--            <h5>{{ $value->title }}</h5>--}}
-{{--        </a>--}}
+        <a href="{{ url($value->id).'-'.$value->url }}">
+            <h5>{{ $value->title }}</h5>
+        </a>
 
         <span>{{ $value->getOstanName->ostan_name }} / {{ $value->getShahrName->shahr_name }} </span>
 

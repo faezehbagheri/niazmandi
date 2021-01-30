@@ -59,6 +59,12 @@
                 </div>
 
                 <div class="form-group">
+
+                    {{ Form::label('show_filter','نمایش به عنوان ایتم آگهی : ') }}
+                    {{ Form::checkbox('show_filter',null) }}
+                </div>
+
+                <div class="form-group">
                     <button class="btn btn-primary">ویرایش</button>
                 </div>
 

@@ -22,9 +22,11 @@ class FilterController extends Controller
     }
 
     public function store(FilterRequest $request){
+        $show_filter=$request->has('show_filter') ? 1 : 0;
         $filter=new Filter($request->all());
+        $filter->show_filter=$show_filter;
         $filter->save();
-        return redirect('admin/ads/filter');
+        return redirect('admin/ads/filter');;
     }
 
     public function edit($id){
@@ -34,8 +36,11 @@ class FilterController extends Controller
     }
 
     public function update($id,FilterRequest $request){
+        $array=$request->all();
+        $show_filter=$request->has('show_filter') ? 1 : 0;
         $filter=Filter::findOrFail($id);
-        $filter->update($request->all());
+        $array['show_filter']=$show_filter;
+        $filter->update($array);
         return redirect('admin/ads/filter');
     }
 

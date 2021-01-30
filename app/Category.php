@@ -58,5 +58,13 @@ class Category extends Model
         }
         return $array;
     }
+    public function ads_list()
+    {
+        return $this->hasMany(Ads::class,'cat1_id','id');
+    }
+    public function ads_list2()
+    {
+        return $this->hasMany(Ads::class,'cat2_id','id');
+    }
 }
 

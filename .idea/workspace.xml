@@ -2,28 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d61eee33-40cd-4be3-a384-f4ec3533c04c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Lib/ThrottlesActiveCode.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/ads.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/site/new.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Ads.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Ads.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Area.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Area.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Ostan.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Ostan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_29_185840_create_ads_img.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_29_185840_create_ads_img.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/fa/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/fa/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/category/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/category/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FilterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FilterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/site.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/filter/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/filter/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/filter/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/filter/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/filter/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/filter/update.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/include/location.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/location.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/ads.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/ads.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +181,7 @@
       <workItem from="1611779422216" duration="21770000" />
       <workItem from="1611842099787" duration="20070000" />
       <workItem from="1611900434968" duration="36887000" />
-      <workItem from="1611992737770" duration="9193000" />
+      <workItem from="1611992737770" duration="17284000" />
     </task>
     <servers />
   </component>

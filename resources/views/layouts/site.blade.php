@@ -9,8 +9,124 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container-fluid">
+
+        <div class="top_line"></div>
+
+        <div class="navbar">
+
+            <ul class="list-inline" id="nab_bar_menu">
+                <li><a href="">همه آگهی ها</a></li>
+                <li><a href="">همه فروشگاه ها</a></li>
+                <li><a href="">پشتیبانی</a></li>
+
+
+
+
+                <li class="dropdown_link">
+                    <a data-toggle="dropdown">
+                        <span>حساب من</span>
+                        <span class="fa fa-user"></span>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown_ul">
+                        <li><a class="dropdown-item" href="">ورود ثبت نام</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="">پسندیده ها</a></li>
+                        <li><a class="dropdown-item" href="">آگهی های من</a></li>
+                        <li><a class="dropdown-item" href="">جست و جو های من</a></li>
+                    </ul>
+                </li>
+                <li class="add_ads_btn">
+                    <div>
+                        <span class="fa fa-plus"></span>
+                        <span>ثبت آگهی رایگان</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
         @yield('content')
+
+
+        <div style="clear:both"></div>
+        <footer id="footer">
+
+
+            <div style="width:100%;float:right">
+                <ul class="list-inline footer_ul">
+                    <li>نیازمندی ها</li>
+                    <li><a href="">
+                            درباره نیازمندی های
+                        </a></li>
+
+                    <li><a href="">
+                            بلاگ
+                        </a></li>
+
+                    <li><a href="">
+                            نقشه سایت
+                        </a></li>
+
+                </ul>
+
+
+                <ul class="list-inline footer_ul">
+                    <li>راهنمای مشتریان</li>
+                    <li><a href="">
+                            سوالات متداول
+                        </a></li>
+
+                    <li><a href="">
+                            قوانین و مقررات
+                        </a></li>
+
+                    <li><a href="">
+                            سیاست حفظ حریم شخصی
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <ul class="list-inline footer_ul">
+                    <li>خدمات مشتریان</li>
+                    <li><a href="">
+                            ارسال پیشنهادات
+                        </a></li>
+
+                    <li><a href="">
+                            پشتیبانی ۲۴ ساعته
+                        </a></li>
+
+                </ul>
+
+                <ul class="list-inline footer_ul left">
+                    <li>
+                        <a href="" class="app-badge google-play"></a>
+                    </li>
+
+                    <li>
+                        <a href="" class="app-badge app-store"></a>
+                    </li>
+
+                    <li>
+                        <a href="" class="app-badge myket"></a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div style="width:100%;background:#afafaf;float:right">
+
+                <p style="font-size:13px;padding:15px 20px 0px 0px">
+                    کليه حقوق اين سایت متعلق به ایده پردازان جواب است.
+                </p>
+            </div>
+
+        </footer>
     </div>
 
 <script type="text/javascript" src="{{ url('js/app.js') }}"></script>
@@ -526,6 +642,27 @@
         $("#login_div").show();
         $("#active_box").hide();
         document.getElementById('active_code').value='';
+    });
+
+    $('.dropdown_link').hover(function () {
+
+        $('.dropdown-menu').show();
+    },function () {
+        $('.dropdown-menu').hide();
+    });
+
+    $('#select_cat').click(function () {
+
+        const check=document.getElementById('catListBox').style.display;
+        if(check=='block')
+        {
+            $("#catListBox").hide();
+        }
+        else
+        {
+            $("#catListBox").show();
+        }
+
     });
 
 </script>
