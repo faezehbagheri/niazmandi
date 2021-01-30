@@ -24,6 +24,13 @@
                 {{ Form::select('parent_id',$catList,null,['class'=>'selectpicker' , 'data-live-search'=>'true']) }}
             </div>
 
+            <p class="has_error">با اضافه کردن این قسمت فیلتر ثبت شده در فرم سرچ و ثبت آگهی برای این دسته نمایش داده نمیشود</p>
+            <div class="form-group">
+
+                {{ Form::label('without_filter_id','عدم نمایش فیلتر با شناسه : ') }}
+                {{ Form::text('without_filter_id',null,['class'=>'form-control']) }}
+            </div>
+
             <div class="form-group">
                 {{ Form::label('pic' , 'آیکون دسته :') }}
                 {{ Form::file('pic') }}

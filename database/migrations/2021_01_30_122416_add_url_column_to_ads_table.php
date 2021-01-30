@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdsImg extends Migration
+class AddUrlColumnToAdsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateAdsImg extends Migration
      */
     public function up()
     {
-        Schema::create('ads_img', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('ads_id');
+        Schema::table('ads', function (Blueprint $table) {
             $table->string('url');
-//            $table->string('type');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateAdsImg extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('img');
+        Schema::table('ads', function (Blueprint $table) {
+            $table->dropColumn('url');
+        });
     }
 }

@@ -2,20 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Ads;
 use App\Category;
 use App\Filter;
 use App\Ostan;
 //use Intervention\Image\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
 class SiteController extends Controller
 {
+    public function index(){
+        $catList=Category::with('getChild')->withCount('ads_list')
+            ->where('parent_id','0')->get();
+        $newAds=Ads::with(['getFirstImage','getOstanName','getShahrName',
+            'getFilter.filter_parent'])
+            ->where(['status'=>1])->OrderBy('created_at','DESC')->get();
+
+
+        return view('site.index',['newAds'=>$newAds,'catList'=>$catList]);
+    }
+
     public function new_ads(){
         $category=Category::with('getChild.getChild')->where('parent_id',0)->get();
         $location=Ostan::with("getShahrs.getAreaFromShahr")->get();
 
-        return view('site.index', ['category'=>$category , 'location'=>$location]);
+        return view('site.new', ['category'=>$category , 'location'=>$location]);
     }
 
     public function get_filter(Request $request)

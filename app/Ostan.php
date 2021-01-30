@@ -23,10 +23,12 @@ class Ostan extends Model
 
         return $ostan;
     }
-    public function getShahrs(){
-        return $this->hasMany('App\Shahr', 'ostan_id', 'id');
+    public function getShahrs()
+    {
+        return $this->hasMany('App\Shahr','ostan_id','id');
     }
-    public function getAreaFromOstan(){
+    public function getAreaFromOstan()
+    {
         return $this->hasManyThrough(
             'App\Area',
             'App\Shahr'

@@ -43,4 +43,38 @@ class Ads extends Model
             }
         }
     }
+    public function createAdsFilters($ads_id,$array){
+        if(is_array($array))
+        {
+            foreach ($array as $key=>$value)
+            {
+                DB::table('ads_filter')
+                    ->insert([
+                        'ads_id'=>$ads_id,
+                        'filter_id'=>$key,
+                        'filter_value'=>$value
+                    ]);
+            }
+        }
+
+    }
+    public function getFirstImage(){
+        return $this->hasOne(AdsImage::class,'ads_id','id');
+    }
+    public function getOstanName()
+    {
+        return $this->hasOne(Ostan::class,'id','ostan_id')
+            ->withDefault(['ostan_name'=>'']);
+
+    }
+    public function getShahrName()
+    {
+        return $this->hasOne(Shahr::class,'id','shahr_id')
+            ->withDefault(['ostan_name'=>'']);
+
+    }
+    public function getFilter()
+    {
+        return $this->hasMany('App\AdsFilter','ads_id','id');
+    }
 }

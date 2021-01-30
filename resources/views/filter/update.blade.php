@@ -15,8 +15,10 @@
         $filter_type[2]= 'فیلتر checkbox';
 
         $validateType=array();
-        $validateType[0]='string';
-        $validateType[1]='number';
+        $validateType[0]='رشته - میتواند خالی باشد';
+        $validateType[1]='رشته - نمیتواند خالی باشد';
+        $validateType[2]='عددی - میتواند خالی باشد';
+        $validateType[3]='عددی - نمیتواند خالی باشد';
 
         ?>
 

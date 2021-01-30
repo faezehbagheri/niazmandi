@@ -22,7 +22,8 @@ class Area extends Model
 
         return $area;
     }
-    public function getShahr(){
-        return $this->hasOne(Shahr::class, 'id', 'shahr_id');
+    public function getShahr()
+    {
+        return $this->hasOne(Shahr::class,'id','shahr_id')->withDefault(['shahr_name'=>'']);
     }
 }

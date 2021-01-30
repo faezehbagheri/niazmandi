@@ -12,6 +12,7 @@
             <table class="table table-bordered table-striped">
                 <tr>
                     <th>ردیف</th>
+                    <th>شناسه فیلتر</th>
                     <th>نام فیلتر</th>
                     <th>دسته فیلتر</th>
                     <th>عملیات</th>
@@ -20,6 +21,7 @@
                 @foreach($filter as $key=>$value)
                     <tr>
                         <td>{{ $i }}</td>
+                        <td>{{ $value->id }}</td>
                         <td>{{ $value->filter_name }}</td>
                         <td>{{ $value->getCat->category_name }}</td>
                         <td>
