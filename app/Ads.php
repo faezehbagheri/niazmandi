@@ -90,4 +90,24 @@ class Ads extends Model
         $number=str_replace('9','۹',$number);
         return $number;
     }
+    public static function getAdsData($url){
+
+        $data=array();
+        $e=explode('-',$url);
+        if(sizeof($e)>=2)
+        {
+            $data['id']=$e[0];
+            $url=str_replace($e[0].'-','',$url);
+            $data['url']=$url;
+        }
+        return $data;
+    }
+    public function getGallery()
+    {
+        return $this->hasMany(AdsImage::class,'ads_id','id');
+    }
+    public function getAdsItem()
+    {
+        return $this->hasMany(AdsFilter::class,'ads_id','id')->with(['getItemName','getItemValue']);
+    }
 }

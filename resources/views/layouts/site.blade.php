@@ -51,6 +51,7 @@
 
 
         <div style="clear:both"></div>
+
         <footer id="footer">
 
 
@@ -665,6 +666,64 @@
 
     });
 
+    $(".input_filter_div").focusin(function(){
+
+        $("label",this).css('top','-11px');
+    });
+
+    $(".input_filter_div").focusout(function(){
+
+        $("label",this).css('top','11px');
+
+        send_filter_ads_form();
+    });
+
+    send_filter_ads_form=function () {
+        const form_data=$("#filter_ads_form").serialize();
+        $.ajax({
+            url:site_url+"/ads_filter",
+            type:"POST",
+            data:form_data,
+            success:function (data)
+            {
+                $('.ads_content').html(data);
+            }
+        });
+    };
+
+    $('.filter_ads_select').change(function () {
+
+        send_filter_ads_form();
+    });
+
+    $(".filter_ul").keyup(function () {
+
+        const input=$('.search_input',this).val();
+        const li=$('li',this);
+        for (var i=0;i<li.length;i++)
+        {
+            const span=$("span",li[i]);
+            if(span.length==1)
+            {
+                if(span[0].innerHTML.indexOf(input)>-1)
+                {
+                    li[i].style.display='block';
+                }
+                else
+                {
+                    li[i].style.display='none';
+                }
+            }
+        }
+    });
+
+    $(".filter_select_box").click(function () {
+
+        const id=this.id.replace('filter_','');
+        $("#filter_box_"+id).show();
+    });
+
 </script>
+    @yield('footer')
 </body>
 </html>

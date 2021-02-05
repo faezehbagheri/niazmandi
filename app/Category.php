@@ -21,15 +21,16 @@ class Category extends Model
         }
         return $array;
     }
-
     public function getChild(){
         return $this->hasMany(Category::class , 'parent_id' , 'id');
     }
-
+    public function childCatWithAdsCount()
+    {
+        return $this->hasMany(Category::class,'parent_id','id')->withCount('ads_list2');
+    }
     public function getParent(){
         return $this->hasOne(Category::class , 'id' , 'parent_id')->withDefault(['category_name' => '']);
     }
-
     public static function search($data){
         $string='';
         $category = self::with('getParent')->orderby('id','DESC');
@@ -43,7 +44,6 @@ class Category extends Model
 
         return $category;
     }
-
     public static function getTotalCatList(){
         $array=array();
         $cat1=self::with('getChild')->where('parent_id',0)->get();

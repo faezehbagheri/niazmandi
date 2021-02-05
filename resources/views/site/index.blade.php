@@ -12,6 +12,13 @@
     </div>
 
 
+    @include('include.index_search_box')
+    @include('include.CatList',['catList'=>$catList])
+
+
+    @include('include.adsCatList',['catList'=>$catList])
+
+
     <div  class="content">
 
 

@@ -30,7 +30,6 @@ class SiteController extends Controller
 
         return view('site.new', ['category'=>$category , 'location'=>$location]);
     }
-
     public function get_filter(Request $request)
     {
         if($request->ajax())
@@ -66,7 +65,6 @@ class SiteController extends Controller
             return $Filter;
         }
     }
-
     public function ads_image_upload(Request $request)
     {
         if($request->hasFile('pic'))
@@ -91,7 +89,6 @@ class SiteController extends Controller
             }
         }
     }
-
     public function del_ads_img(Request $request)
     {
         $src=$request->get('src');
@@ -107,7 +104,6 @@ class SiteController extends Controller
             return 'error';
         }
     }
-
     public function create_ads(Request $request)
     {
         $redirect_login=false;
@@ -161,5 +157,71 @@ class SiteController extends Controller
         }
 
 
+    }
+    public function getCatAds($location_name,$cat_url)
+    {
+        $catList=Category::with('getChild')->withCount('ads_list')->where('parent_id','0')->get();
+
+        $category=Category::with('childCatWithAdsCount')->where(['url'=>$cat_url])->firstOrFail();
+        $catFilter=Filter::with('getChild')->where('catId',$category->id)->get();
+        $Ads=Ads::with(['getFirstImage','getOstanName','getShahrName',
+            'getFilter.filter_parent'])
+            ->where('cat1_id',$category->id)->where('status',1)
+            ->OrderBy('created_at','DESC')->get();
+
+        return view('site.search_ads_cat',
+            [
+                'ads'=>$Ads,
+                'category'=>$category,
+                'catFilter'=>$catFilter,
+                'cat_name'=>$category->category_name,
+                'catList'=>$catList
+            ]);
+    }
+    public function getCat2Ads($location_name,$cat_url,$cat2_url)
+    {
+        $catList=Category::with('getChild')->withCount('ads_list')->where('parent_id','0')->get();
+
+        $category=Category::where(['url'=>$cat_url])->firstOrFail();
+        $category2=Category::with('childCatWithAdsCount')
+            ->where(['url'=>$cat2_url,'parent_id'=>$category->id])->firstOrFail();
+        $catFilter=Filter::with('getChild')
+            ->whereIn('catId',[$category->id,$category2->id])
+            ->get();
+
+        $Ads=Ads::with(['getFirstImage','getOstanName','getShahrName','getFilter.filter_parent'])
+            ->where(['cat1_id'=>$category->id,'cat2_id'=>$category2->id,'status'=>1])
+            ->OrderBy('created_at','DESC')->get();
+        return view('site.search_ads_cat',
+            [
+                'ads'=>$Ads,
+                'category'=>$category2,
+                'catFilter'=>$catFilter,
+                'cat_name'=>$category2->category_name,
+                'catList'=>$catList
+            ]);
+    }
+    public function ads_filter(Request $request)
+    {
+        $search=new Search();
+        $search->filter=$request->get('filter',array());
+        $ads=$search->getAds();
+
+        return view('include.ads',['ads'=>$ads]);
+    }
+    public function show_ads($url)
+    {
+        $data=Ads::getAdsData($url);
+        if(sizeof($data)==2){
+
+            $id=$data['id'];
+            settype($id,'integer');
+            $ads=Ads::with(['getGallery','getAdsItem'])->where(['id'=>$id,'url'=>$data['url']])->firstOrFail();
+
+            return view('site.show_ads_content',['ads'=>$ads]);
+        }
+        else{
+            abort(404);
+        }
     }
 }

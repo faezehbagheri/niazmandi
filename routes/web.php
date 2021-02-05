@@ -29,6 +29,9 @@ Route::post('ads/new','SiteController@create_ads');
 Route::post('get_filter', 'SiteController@get_filter');
 Route::post('ads_image_upload','SiteController@ads_image_upload');
 Route::post('del_ads_img','SiteController@del_ads_img');
+Route::get('{location_name}/{cat_url}','SiteController@getCatAds');
+Route::get('{location_name}/{cat_url}/{cat2_url}','SiteController@getCat2Ads');
+Route::post('ads_filter','SiteController@ads_filter');
 
 //Auth::routes();
 
@@ -36,3 +39,5 @@ Route::post('del_ads_img','SiteController@del_ads_img');
 Route::get('login','UserController@login_form')->name('login');
 Route::post('login','UserController@login');
 Route::post('active_code','UserController@active_code');
+
+Route::get('{ads_url}','SiteController@show_ads');
