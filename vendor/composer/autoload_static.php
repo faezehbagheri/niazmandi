@@ -509,6 +509,7 @@ class ComposerStaticInit4954ba1aef3218452339a8c4e22505e8
 
     public static $classMap = array (
         'App\\Ads' => __DIR__ . '/../..' . '/app/Ads.php',
+        'App\\AdsFilter' => __DIR__ . '/../..' . '/app/AdsFilter.php',
         'App\\AdsImage' => __DIR__ . '/../..' . '/app/AdsImage.php',
         'App\\Area' => __DIR__ . '/../..' . '/app/Area.php',
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
@@ -552,6 +553,7 @@ class ComposerStaticInit4954ba1aef3218452339a8c4e22505e8
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Rules\\MobileValidate' => __DIR__ . '/../..' . '/app/Rules/MobileValidate.php',
+        'App\\Search' => __DIR__ . '/../..' . '/app/Search.php',
         'App\\Shahr' => __DIR__ . '/../..' . '/app/Shahr.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

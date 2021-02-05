@@ -22,6 +22,10 @@ Route::prefix("admin")->group(function(){
     Route::resource('ads/filter','FilterController');
     Route::post('ads/filter/add_item','FilterController@add_item');
     Route::delete('ads/filter/del_item/{id}' , 'FilterController@del_item');
+    Route::get('ads/verified','AdsController@verified');
+    Route::delete('ads/{id}','AdsController@destroy');
+    Route::get('ads/{id}/show','AdsController@show');
+    Route::post('ads/changeStatus','AdsController@changeStatus');
 });
 
 Route::get('ads/new', 'SiteController@new_ads');

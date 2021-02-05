@@ -186,6 +186,16 @@
             '</div>';
         $('#item_box').append(html);
     };
+    $('.ads_gallery_img').click(function ()
+    {
+        const src=$(this).attr('src');
+        $("#ad_img").attr('src',src);
+    });
+    $("#ads_status").change(function () {
+
+        $("#statusForm").submit();
+
+    });
 </script>
 
 </body>

@@ -273,3 +273,22 @@ a{
     color: red;
     cursor: pointer;
 }
+.ads_gallery_div{
+    width:100px;
+    float:right;
+    margin:10px;
+}
+.ads_gallery_div img
+{
+    width:100%;
+}
+#ads_item_table{
+    margin-top:0px !important;
+}
+
+#ads_item_table .btn{
+    -webkit-border-radius:0px !important;
+    -moz-border-radius:0px !important;
+    border-radius:0px !important;
+    font-size:14px !important;
+}

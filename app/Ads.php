@@ -110,4 +110,8 @@ class Ads extends Model
     {
         return $this->hasMany(AdsFilter::class,'ads_id','id')->with(['getItemName','getItemValue']);
     }
+    public function getUser()
+    {
+        return $this->hasOne(User::class,'id','user_id')->withDefault(['mobile'=>'اطلاعات کاربر حذف شده']);
+    }
 }

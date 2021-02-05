@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Ads' => $baseDir . '/app/Ads.php',
+    'App\\AdsFilter' => $baseDir . '/app/AdsFilter.php',
     'App\\AdsImage' => $baseDir . '/app/AdsImage.php',
     'App\\Area' => $baseDir . '/app/Area.php',
     'App\\Category' => $baseDir . '/app/Category.php',
@@ -50,6 +51,7 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\Rules\\MobileValidate' => $baseDir . '/app/Rules/MobileValidate.php',
+    'App\\Search' => $baseDir . '/app/Search.php',
     'App\\Shahr' => $baseDir . '/app/Shahr.php',
     'App\\User' => $baseDir . '/app/User.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
