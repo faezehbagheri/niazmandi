@@ -383,7 +383,9 @@ a:hover{
     padding:5px 10px 5px 10px
 }
 .header{
-    padding:20px 20px 5px 20px;
+    /*padding:20px 20px 5px 20px;*/
+    margin: auto;
+    padding: 20px 0;
 }
 .index_search_box{
     width:95%;
@@ -434,7 +436,7 @@ a:hover{
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     padding:1%;
     position:absolute;
-    margin-right:2.5%;
+    margin-right:8.5%;
     display:none;
     z-index:100;
 }
@@ -699,4 +701,7 @@ a:hover{
 #ads_tozihat h4{
     margin-top: 20px;
     margin-bottom:20px;
+}
+#add_new_ads{
+    color: white !important;
 }

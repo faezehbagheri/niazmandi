@@ -1,4 +1,4 @@
-<div id="catListBox">
+<div id="catListBox" class="col-10">
 
     <?php $r=0; ?>
 

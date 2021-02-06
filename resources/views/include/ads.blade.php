@@ -1,4 +1,3 @@
-{{$ads}}
 @foreach($ads as $key=>$value)
     <div class="ads_box">
 
@@ -22,7 +21,7 @@
         @foreach($value->getFilter as $key=>$value)
 
 
-            <?php $filter_parent=$value->filter_parent ?>
+            <?php $filter_parent = $value->filter_parent ?>
             @if(!empty($value->filter_value) && $filter_parent->show_filter==1)
 
                 <p>

@@ -1,4 +1,4 @@
-<div class="adsCatList">
+<div class="adsCatList col-10">
 
     <ul class="list-inline">
         @foreach($catList as $key=>$value)

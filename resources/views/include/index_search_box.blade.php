@@ -1,4 +1,4 @@
-<div class="index_search_box">
+<div class="index_search_box col-10">
 
 
     <div class="col-4">
@@ -15,7 +15,7 @@
         <span class="fa fa-angle-down"></span>
     </div>
 
-    <div class="select_box form-control col-3">
+    <div class="select_box form-control col-3" onclick="show_location_list()">
         <span class="box_title">همه ایران</span>
         <span class="fa fa-angle-down"></span>
     </div>
