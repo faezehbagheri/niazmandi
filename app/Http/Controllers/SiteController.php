@@ -153,7 +153,8 @@ class SiteController extends Controller
         }
         else
         {
-            return redirect('list')->with('status','آگهی شما ثبت شده و بعد از تایید نمایش داده میشود ');
+//            return redirect('list')->with('status','آگهی شما ثبت شده و بعد از تایید نمایش داده میشود ');
+            return redirect('/');
         }
 
 

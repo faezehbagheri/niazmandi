@@ -20,7 +20,7 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
                     <div class="child_menu">
-                        <a href="">آگهی های در انتظار تایید</a>
+                        <a href="{{ url('admin/ads/verified') }}">آگهی های در انتظار تایید</a>
                         <a href="">آگهی های تایید شده</a>
                         <a href="{{ url('admin/ads/filter') }}">مدیریت فیلتر های آگهی</a>
                     </div>
