@@ -1,3 +1,4 @@
+{{$ads}}
 @foreach($ads as $key=>$value)
     <div class="ads_box">
 

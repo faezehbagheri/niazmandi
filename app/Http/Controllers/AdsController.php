@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Ads;
 use Illuminate\Http\Request;
 
 class AdsController extends Controller

@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <div class="header">
+    <div class="header col-10">
 
-        <p>نیازمندیهای رایگان</p>
+        <h2>نیازمندیهای رایگان</h2>
         <p>
 
             خرید و فروش خودرو، املاک، آپارتمان، گوشی موبایل، تبلت، لوازم خانگی، لوازم دست دوم، استخدام و هر چه فکر کنید!
@@ -19,7 +19,7 @@
     @include('include.adsCatList',['catList'=>$catList])
 
 
-    <div  class="content">
+    <div  class="content col-10">
 
 
         <h5 class="color-gray">جدیدترین آگهی‌ها</h5>

@@ -6,7 +6,7 @@
     @include('include.CatList',['catList'=>$catList])
 
 
-    <div class="index_search_box">
+    <div class="index_search_box col-10">
 
         @include('include.ads_filter_form',['catFilter'=>$catFilter])
 
@@ -14,7 +14,7 @@
 
 
 
-    <div class="content" style="padding-top:0px">
+    <div class="content col-10" style="padding-top:0px">
 
         <div class="filter_list_box">
 

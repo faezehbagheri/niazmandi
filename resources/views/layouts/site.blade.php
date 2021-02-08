@@ -40,7 +40,7 @@
                 <li class="add_ads_btn">
                     <div>
                         <span class="fa fa-plus"></span>
-                        <span>ثبت آگهی رایگان</span>
+                        <a href="{{ url('ads/new') }}" id="add_new_ads">ثبت آگهی رایگان</a>
                     </div>
                 </li>
             </ul>

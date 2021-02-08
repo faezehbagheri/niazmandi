@@ -3,6 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="d61eee33-40cd-4be3-a384-f4ec3533c04c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/include/CatList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/CatList.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/include/ads.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/ads.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/include/adsCatList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/adsCatList.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/include/index_search_box.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/index_search_box.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/new.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/search_ads_cat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/search_ads_cat.blade.php" afterDir="false" />
+>>>>>>> 47c20c9077ce57b7e81e907848d04b8b574fecd6
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +145,9 @@
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
   <component name="ProjectId" id="1nfRyuyFInuM2SJ9drfEoaTziGV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -175,8 +191,13 @@
       <workItem from="1612429803755" duration="41000" />
       <workItem from="1612448731455" duration="346000" />
       <workItem from="1612465424246" duration="1327000" />
+<<<<<<< HEAD
       <workItem from="1612512016754" duration="16049000" />
       <workItem from="1612677677656" duration="11020000" />
+=======
+      <workItem from="1612512016754" duration="16135000" />
+      <workItem from="1612631815680" duration="6341000" />
+>>>>>>> 47c20c9077ce57b7e81e907848d04b8b574fecd6
     </task>
     <servers />
   </component>

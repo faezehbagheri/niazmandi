@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="new_ads_box">
+    <div class="new_ads_box col-7">
         <h5>ثبت آگهی جدید</h5>
 
         <div class="row">
