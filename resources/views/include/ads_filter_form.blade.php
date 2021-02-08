@@ -87,7 +87,7 @@
     @if(sizeof($category->childCatWithAdsCount)>0)
         <ul class="list-inline search_cat_list">
             @foreach($category->childCatWithAdsCount as $key=>$value)
-                <li><a href="{{ url('ایران').'/'.$category->url.'/'.$value->url }}">
+                <li><a href="{{ url('مکان').'/'.$shahr_name.'/'.$category->url.'/'.$value->url }}">
                         {{ $value->category_name }} ({{ \App\Ads::replace_number(number_format($value->ads_list2_count)) }})
                     </a></li>
             @endforeach

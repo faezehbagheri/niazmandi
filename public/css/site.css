@@ -49,6 +49,7 @@ body{
     position: fixed;
     width: 100%;
     display: none;
+    z-index: 99999;
 }
 
 .data_box{
@@ -260,7 +261,7 @@ textarea{
     color:gray;
 }
 .ads_box{
-    width:225px;
+    width:238px;
     float:right;
     background: white;
     margin-left:15px;
@@ -334,6 +335,7 @@ a{
 #nab_bar_menu{
     width:100%;
     padding-right:20px !important;
+    margin: 0 auto 1rem;
 }
 #nab_bar_menu li{
     float:right;
@@ -436,7 +438,7 @@ a:hover{
     box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
     padding:1%;
     position:absolute;
-    margin-right:8.5%;
+    margin-right:16.5%;
     display:none;
     z-index:100;
 }
@@ -447,7 +449,7 @@ a:hover{
     float:right;
     margin-left:20px;
     margin-right:20px;
-    width:170px;
+    width:205px;
 }
 #catListBox .list-inline{
     padding-right:5px !important;
@@ -610,6 +612,8 @@ a:hover{
 .save_btn_search{
     font-size:14px !important;
     float:left;
+    border: 1px solid #ced4da;
+    border-radius: 35px;
 }
 .filter_item{
     background:white;

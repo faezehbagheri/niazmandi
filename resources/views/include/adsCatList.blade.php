@@ -1,10 +1,10 @@
-<div class="adsCatList col-10">
+<div class="adsCatList col-8 px-0">
 
     <ul class="list-inline">
         @foreach($catList as $key=>$value)
 
             <li>
-                <a href="{{ url('ایران').'/'.$value->url }}">
+                <a href="{{ url('مکان').'/'.$shahr_name.'/'.$value->url }}">
                     @if(!empty($value->icon))
                         <img src="{{ url('upload').'/'.$value->icon }}" class="cat_icon"/>
                     @endif

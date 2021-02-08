@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="header col-10">
+    <div class="header col-8">
 
         <h2>نیازمندیهای رایگان</h2>
         <p>
@@ -12,14 +12,14 @@
     </div>
 
 
-    @include('include.index_search_box')
+    @include('include.index_search_box',['location'=>$location])
     @include('include.CatList',['catList'=>$catList])
 
 
-    @include('include.adsCatList',['catList'=>$catList])
+    @include('include.adsCatList',['catList'=>$catList, 'shahr_name'=>"ایران"])
 
 
-    <div  class="content col-10">
+    <div  class="content col-8 px-0">
 
 
         <h5 class="color-gray">جدیدترین آگهی‌ها</h5>

@@ -15,9 +15,8 @@
 
         <div class="navbar">
 
-            <ul class="list-inline" id="nab_bar_menu">
-                <li><a href="">همه آگهی ها</a></li>
-                <li><a href="">همه فروشگاه ها</a></li>
+            <ul class="list-inline col-8" id="nab_bar_menu">
+                <li><a href="/">صفحه اصلی</a></li>
                 <li><a href="">پشتیبانی</a></li>
 
 
@@ -30,7 +29,7 @@
                     </a>
 
                     <ul class="dropdown-menu dropdown_ul">
-                        <li><a class="dropdown-item" href="">ورود ثبت نام</a></li>
+                        <li><a class="dropdown-item" href="{{ url('login') }}">ورود ثبت نام</a></li>
                         <li><div class="dropdown-divider"></div></li>
                         <li><a class="dropdown-item" href="">پسندیده ها</a></li>
                         <li><a class="dropdown-item" href="">آگهی های من</a></li>
@@ -55,7 +54,7 @@
         <footer id="footer">
 
 
-            <div style="width:100%;float:right">
+            <div style="margin: auto" class="col-8">
                 <ul class="list-inline footer_ul">
                     <li>نیازمندی ها</li>
                     <li><a href="">
@@ -117,14 +116,6 @@
                     </li>
                 </ul>
 
-            </div>
-
-
-            <div style="width:100%;background:#afafaf;float:right">
-
-                <p style="font-size:13px;padding:15px 20px 0px 0px">
-                    کليه حقوق اين سایت متعلق به ایده پردازان جواب است.
-                </p>
             </div>
 
         </footer>
@@ -227,6 +218,27 @@
         }
 
     };
+
+    show_shahr=function (text,id,size){
+
+        $('.shahr').hide();
+        $("#ostan").hide();
+        $("#"+text+'_box_'+id).show();
+        if(ostan_id==0)
+        {
+            ostan_id=id;
+        }
+        else if(shahr_id==0)
+        {
+            shahr_id=id;
+        }
+        if(size==0)
+        {
+            location_id=ostan_id+"_"+shahr_id+"_"+area_id;
+            close_data_box();
+        }
+    };
+
 
     show_area=function(text,id,size,name){
 
@@ -722,6 +734,7 @@
         const id=this.id.replace('filter_','');
         $("#filter_box_"+id).show();
     });
+
 
 </script>
     @yield('footer')

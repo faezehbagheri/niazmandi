@@ -7,6 +7,7 @@ use App\Category;
 use App\Filter;
 use App\Ostan;
 //use Intervention\Image\Image;
+use App\Shahr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
@@ -19,9 +20,9 @@ class SiteController extends Controller
         $newAds=Ads::with(['getFirstImage','getOstanName','getShahrName',
             'getFilter.filter_parent'])
             ->where(['status'=>1])->OrderBy('created_at','DESC')->get();
+        $location=Ostan::with("getShahrs.getAreaFromShahr")->get();
 
-
-        return view('site.index',['newAds'=>$newAds,'catList'=>$catList]);
+        return view('site.index',['newAds'=>$newAds,'catList'=>$catList , 'location'=>$location]);
     }
 
     public function new_ads(){
@@ -158,30 +159,84 @@ class SiteController extends Controller
 
 
     }
+    public function getLocationAds($location_name){
+        $loca=Shahr::with('getAreaFromShahr')->where('shahr_name',$location_name)->get();
+        $shahr_id=$loca[0]['id'];
+        $shahr_name=$loca[0]['shahr_name'];
+        $ostan=Ostan::with('getShahrs')->where('id',$loca[0]['ostan_id'])->get();
+        $ostan_name=$ostan[0]['ostan_name'];
+        $ads=Ads::with(['getFirstImage','getOstanName','getShahrName',
+            'getFilter.filter_parent'])
+            ->where('shahr_id',$shahr_id)->where('status',1)
+            ->OrderBy('created_at','DESC')->get();
+        $catList=Category::with('getChild')->withCount('ads_list')
+            ->where('parent_id','0')->get();
+        $location=Ostan::with("getShahrs.getAreaFromShahr")->get();
+
+
+        return view('site.search_location_ads',[
+            'ads'=>$ads,
+            'catList'=>$catList ,
+            'location'=>$location ,
+            'shahr_name'=>$shahr_name ,
+            'ostan_name'=>$ostan_name
+        ]);
+    }
     public function getCatAds($location_name,$cat_url)
     {
         $catList=Category::with('getChild')->withCount('ads_list')->where('parent_id','0')->get();
-
         $category=Category::with('childCatWithAdsCount')->where(['url'=>$cat_url])->firstOrFail();
         $catFilter=Filter::with('getChild')->where('catId',$category->id)->get();
-        $Ads=Ads::with(['getFirstImage','getOstanName','getShahrName',
-            'getFilter.filter_parent'])
-            ->where('cat1_id',$category->id)->where('status',1)
-            ->OrderBy('created_at','DESC')->get();
+        $location=Ostan::with("getShahrs.getAreaFromShahr")->get();
 
-        return view('site.search_ads_cat',
-            [
-                'ads'=>$Ads,
-                'category'=>$category,
-                'catFilter'=>$catFilter,
-                'cat_name'=>$category->category_name,
-                'catList'=>$catList
-            ]);
+        if ($location_name == "ایران"){
+            $shahr_name= "ایران";
+            $Ads=Ads::with(['getFirstImage','getOstanName','getShahrName',
+                'getFilter.filter_parent'])
+                ->where('cat1_id',$category->id)->where('status',1)
+                ->OrderBy('created_at','DESC')->get();
+
+            return view('site.search_ads_cat',
+                [
+                    'ads'=>$Ads,
+                    'category'=>$category,
+                    'catFilter'=>$catFilter,
+                    'cat_name'=>$category->category_name,
+                    'catList'=>$catList,
+                    'location'=>$location,
+                    'shahr_name'=>$shahr_name
+                ]);
+
+        }else {
+            $loca = Shahr::with('getAreaFromShahr')->where('shahr_name', $location_name)->get();
+            $shahr_id = $loca[0]['id'];
+            $shahr_name = $loca[0]['shahr_name'];
+            $ostan = Ostan::with('getShahrs')->where('id', $loca[0]['ostan_id'])->get();
+            $ostan_name = $ostan[0]['ostan_name'];
+
+            $Ads=Ads::with(['getFirstImage','getOstanName','getShahrName',
+                'getFilter.filter_parent'])
+                ->where('shahr_id',$shahr_id)->where('cat1_id',$category->id)->where('status',1)
+                ->OrderBy('created_at','DESC')->get();
+
+            return view('site.search_ads_cat',
+                [
+                    'ads'=>$Ads,
+                    'category'=>$category,
+                    'catFilter'=>$catFilter,
+                    'cat_name'=>$category->category_name,
+                    'catList'=>$catList,
+                    'location'=>$location,
+                    'shahr_name'=>$shahr_name ,
+                    'ostan_name'=>$ostan_name
+                ]);
+        }
     }
     public function getCat2Ads($location_name,$cat_url,$cat2_url)
     {
-        $catList=Category::with('getChild')->withCount('ads_list')->where('parent_id','0')->get();
 
+        $location=Ostan::with("getShahrs.getAreaFromShahr")->get();
+        $catList=Category::with('getChild')->withCount('ads_list')->where('parent_id','0')->get();
         $category=Category::where(['url'=>$cat_url])->firstOrFail();
         $category2=Category::with('childCatWithAdsCount')
             ->where(['url'=>$cat2_url,'parent_id'=>$category->id])->firstOrFail();
@@ -192,14 +247,48 @@ class SiteController extends Controller
         $Ads=Ads::with(['getFirstImage','getOstanName','getShahrName','getFilter.filter_parent'])
             ->where(['cat1_id'=>$category->id,'cat2_id'=>$category2->id,'status'=>1])
             ->OrderBy('created_at','DESC')->get();
-        return view('site.search_ads_cat',
-            [
-                'ads'=>$Ads,
-                'category'=>$category2,
-                'catFilter'=>$catFilter,
-                'cat_name'=>$category2->category_name,
-                'catList'=>$catList
-            ]);
+
+
+        if ($location_name == "ایران"){
+            $shahr_name="ایران";
+            $Ads=Ads::with(['getFirstImage','getOstanName','getShahrName','getFilter.filter_parent'])
+                ->where(['cat1_id'=>$category->id,'cat2_id'=>$category2->id,'status'=>1])
+                ->OrderBy('created_at','DESC')->get();
+
+            return view('site.search_ads_cat',
+                [
+                    'ads'=>$Ads,
+                    'category'=>$category2,
+                    'catFilter'=>$catFilter,
+                    'cat_name'=>$category2->category_name,
+                    'catList'=>$catList,
+                    'location'=>$location,
+                    'shahr_name'=>$shahr_name ,
+                ]);
+
+        }else {
+            $loca = Shahr::with('getAreaFromShahr')->where('shahr_name', $location_name)->get();
+            $shahr_id = $loca[0]['id'];
+            $shahr_name = $loca[0]['shahr_name'];
+            $ostan = Ostan::with('getShahrs')->where('id', $loca[0]['ostan_id'])->get();
+            $ostan_name = $ostan[0]['ostan_name'];
+
+            $Ads=Ads::with(['getFirstImage','getOstanName','getShahrName','getFilter.filter_parent'])
+                ->where([ 'shahr_id'=>$shahr_id , 'cat1_id'=>$category->id,'cat2_id'=>$category2->id,'status'=>1])
+                ->OrderBy('created_at','DESC')->get();
+
+            return view('site.search_ads_cat',
+                [
+                    'ads'=>$Ads,
+                    'category'=>$category,
+                    'catFilter'=>$catFilter,
+                    'cat_name'=>$category->category_name,
+                    'catList'=>$catList,
+                    'location'=>$location,
+                    'shahr_name'=>$shahr_name ,
+                    'ostan_name'=>$ostan_name
+                ]);
+        }
     }
     public function ads_filter(Request $request)
     {

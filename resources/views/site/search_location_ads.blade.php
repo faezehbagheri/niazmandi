@@ -2,28 +2,20 @@
 
 @section('content')
 
-    @include('include.index_search_box',['cat_name'=>$cat_name , 'location'=>$location, 'shahr_name'=>$shahr_name])
+    @include('include.index_search_box',['location'=>$location , 'shahr_name'=>$shahr_name])
     @include('include.CatList',['catList'=>$catList])
 
 
-    <div class="index_search_box col-8">
-
-        @include('include.ads_filter_form',['catFilter'=>$catFilter, 'shahr_name'=>$shahr_name])
-
-    </div>
+    @include('include.adsCatList',['catList'=>$catList, 'shahr_name'=>$shahr_name])
 
 
 
     <div class="content col-8 px-0" style="padding-top:0px">
 
-        <div class="filter_list_box row mx-0 mt-3">
+        <div class="filter_list_box">
 
             <div class="filter_item">
                 <span>{{ $shahr_name }}</span>
-                <span class="fa fa-close"></span>
-            </div>
-            <div class="filter_item">
-                <span>{{ $category->category_name }}</span>
                 <span class="fa fa-close"></span>
             </div>
 
@@ -40,7 +32,7 @@
                             @if(isset($ostan_name))
                                 {{ $ostan_name  }}
                             @else
-                                ایران
+                                 ایران
                             @endif
                         </span>
                     </a>
@@ -57,12 +49,7 @@
                             @endif
                         </span>
                     </a>
-                    <span class="fa fa-angle-left"></span>
                 </li>
-
-                <li><a href="">
-                        <span class="text_li"> {{ $category->category_name }}</span>
-                    </a></li>
 
             </ul>
 

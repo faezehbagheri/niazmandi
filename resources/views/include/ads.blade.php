@@ -1,9 +1,8 @@
-{{$ads}}
 @foreach($ads as $key=>$value)
     <div class="ads_box">
 
 
-        <a href="{{ url($value->id).'-'.$value->url }}">
+        <a href="{{ url("ads").'/'.$value->id.'-'.$value->url }}">
             @if($value->getFirstImage)
                 <img src="{{ url('thumbnails').'/'.$value->getFirstImage->url }}">
 
@@ -12,7 +11,7 @@
             @endif
         </a>
 
-        <a href="{{ url($value->id).'-'.$value->url }}">
+        <a  href="{{ url("ads").'/'.$value->id.'-'.$value->url }}">
             <h5>{{ $value->title }}</h5>
         </a>
 
