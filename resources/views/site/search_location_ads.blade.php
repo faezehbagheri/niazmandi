@@ -6,7 +6,7 @@
     @include('include.CatList',['catList'=>$catList])
 
 
-    @include('include.adsCatList',['catList'=>$catList, 'shahr_name'=>$shahr_name])
+    @include('include.adsCatList',['catList'=>$catList, 'shahr_name'=>$shahr_name,'shahr_id'=>$shahr_id])
 
 
 

@@ -47,4 +47,3 @@ Route::post('login','UserController@login');
 Route::post('active_code','UserController@active_code');
 
 Route::get('ads/{ads_url}','SiteController@show_ads');
-//Route::get('faeze/bagheri/ff/bb','SiteController@show_ads');

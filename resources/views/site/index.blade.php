@@ -16,7 +16,7 @@
     @include('include.CatList',['catList'=>$catList])
 
 
-    @include('include.adsCatList',['catList'=>$catList, 'shahr_name'=>"ایران"])
+    @include('include.adsCatList',['catList'=>$catList, 'shahr_name'=>"ایران",'shahr_id'=>"ایران"])
 
 
     <div  class="content col-8 px-0">

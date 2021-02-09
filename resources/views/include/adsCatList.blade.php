@@ -11,7 +11,21 @@
 
                     <span>
                         {{ $value->category_name }}
-                        <span class="ads_count">({{ \App\Ads::replace_number(number_format($value->ads_list_count)) }})</span>
+                        <?php $r=0; ?>
+                        @if($shahr_id != "ایران")
+                            @foreach ($value['ads_list'] as $key2=>$value2)
+                                @if ($value2['shahr_id']==$shahr_id)
+                                    <?php $r++; ?>
+                                @endif
+                            @endforeach
+                            <span class="ads_count">({{ $r }})</span>
+                        @else
+                            @foreach ($value['ads_list'] as $key2=>$value2)
+                                <?php $r++; ?>
+                            @endforeach
+                            <span class="ads_count">({{ $r }})</span>
+                        @endif
+                        <?php $r=0; ?>
                     </span>
                 </a>
             </li>

@@ -9,7 +9,7 @@
 
         <div style="width:100%;float:right;margin-top: -22px;padding-bottom:10px">
 
-            <div id="arrow_right" onclick="back_area_list()">
+            <div id="arrow_right" onclick="back_location_list()">
                 <span class="fa fa-arrow-right"></span>
                 <span>بازگشت</span>
             </div>

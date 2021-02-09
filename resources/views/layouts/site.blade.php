@@ -227,6 +227,7 @@
         if(ostan_id==0)
         {
             ostan_id=id;
+            $("#arrow_right").show();
         }
         else if(shahr_id==0)
         {
@@ -249,6 +250,7 @@
         {
             ostan_name=name;
             ostan_id=id;
+            $("#arrow_right").show();
         }
         else if(shahr_id==0)
         {
@@ -277,6 +279,22 @@
             $("#area_name").html(location_text);
             close_data_box();
 
+        }
+    };
+
+    back_location_list=function () {
+        if(shahr_id>0)
+        {
+            shahr_id=0;
+            $('.child_menu2').hide();
+            $("#shahr_box_"+shahr_id).show();
+        }
+        else if(ostan_id>0)
+        {
+            ostan_id=0
+            $('.shahr').hide();
+            $("#ostan").show();
+            $("#arrow_right").hide();
         }
     };
 

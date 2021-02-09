@@ -15,8 +15,10 @@ use Intervention\Image\Facades\Image;
 class SiteController extends Controller
 {
     public function index(){
-        $catList=Category::with('getChild')->withCount('ads_list')
+        $catList=Category::with('getChild')->with('ads_list')
             ->where('parent_id','0')->get();
+
+
         $newAds=Ads::with(['getFirstImage','getOstanName','getShahrName',
             'getFilter.filter_parent'])
             ->where(['status'=>1])->OrderBy('created_at','DESC')->get();
@@ -179,6 +181,7 @@ class SiteController extends Controller
             'ads'=>$ads,
             'catList'=>$catList ,
             'location'=>$location ,
+            'shahr_id'=>$shahr_id,
             'shahr_name'=>$shahr_name ,
             'ostan_name'=>$ostan_name
         ]);
@@ -228,6 +231,7 @@ class SiteController extends Controller
                     'cat_name'=>$category->category_name,
                     'catList'=>$catList,
                     'location'=>$location,
+                    'shahr_id'=>$shahr_id,
                     'shahr_name'=>$shahr_name ,
                     'ostan_name'=>$ostan_name
                 ]);
@@ -286,6 +290,7 @@ class SiteController extends Controller
                     'cat_name'=>$category->category_name,
                     'catList'=>$catList,
                     'location'=>$location,
+                    'shahr_id'=>$shahr_id,
                     'shahr_name'=>$shahr_name ,
                     'ostan_name'=>$ostan_name
                 ]);

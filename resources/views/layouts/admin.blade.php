@@ -6,6 +6,9 @@
     <title>پنل مدیریت</title>
     <link href="{{ url('css/app.css') }}" rel="stylesheet">
     <link href="{{ url('css/admin.css') }}" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="http://demo.itsolutionstuff.com/plugin/jquery.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
 

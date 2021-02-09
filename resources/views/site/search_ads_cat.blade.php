@@ -8,7 +8,7 @@
 
     <div class="index_search_box col-8">
 
-        @include('include.ads_filter_form',['catFilter'=>$catFilter, 'shahr_name'=>$shahr_name])
+        @include('include.ads_filter_form',['catFilter'=>$catFilter, 'shahr_name'=>$shahr_name ,'shahr_id'=>$shahr_id])
 
     </div>
 

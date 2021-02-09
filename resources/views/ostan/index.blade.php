@@ -9,7 +9,7 @@
         <div class="panel_content">
 
             <a href="{{ url('admin/location/ostan/create') }}" class="btn btn-success">افزودن استان جدید</a>
-            <table class="table table-bordered table-striped">
+            <table class="table table-bordered table-striped" id="ostan-table">
                 <tr>
                     <th>ردیف</th>
                     <th>نام استان</th>
@@ -42,3 +42,23 @@
     </div>
 
 @endsection
+@push('scripts')
+<script>
+    $(function(){
+
+        var table = $('#ostan-table').DataTable({
+            "oLanguage":{
+                "sUrl": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Persian.json"
+            },
+            "pageLength": 25,
+            "processing": true,
+            "serverSide": true,
+            {{--"ajax": "{!! route('datatables.data') !!}",--}}
+            "columns":[
+                {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                {data: 'name', name: 'name'}
+            ]
+        });
+    });
+</script>
+@endpush
