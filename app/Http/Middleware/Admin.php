@@ -18,7 +18,7 @@ class Admin
     {
         if (Auth::check()){
             $role=Auth::user()->role;
-            if ($role== 1){
+            if ($role== 1 || $role == 0){
                 return $next($request);
             }else{
                 return redirect('/');

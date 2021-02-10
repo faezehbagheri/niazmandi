@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Lib\ThrottlesActiveCode;
 use App\Rules\MobileValidate;
 use App\User;
@@ -16,6 +17,39 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->only(['login_form','login','active_code']);
+    }
+    public function index(){
+        $users=User::whereIn('role', [1,0])->get();
+        return view('user.index',['users'=>$users]);
+    }
+    public function create(){
+        return view('user/create');
+    }
+    public function store(UserRequest $request){
+        $user=new User($request->all());
+        $user->role=(int)$request->role;
+        $user->username=$request->username;
+        $user->save();
+        return redirect('admin/users');
+    }
+    public function edit($id){
+        $user=User::findOrFail($id);
+        return view('user.update',['user'=>$user]);
+    }
+
+    public function update($id,UserRequest $request){
+        $array=$request->all();
+        $user=User::findOrFail($id);
+        $user->role=(int)$request->role;
+        $user->username=$request->username;
+        $user->update($array);
+        return redirect('admin/users');
+    }
+
+    public function destroy($id){
+        $user=User::findOrFail($id);
+        $user->delete();
+        return redirect('admin/users');
     }
     public function adminlogin_form(){
         return view('user.admin_login');

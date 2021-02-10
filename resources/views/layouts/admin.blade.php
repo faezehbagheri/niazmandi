@@ -59,7 +59,7 @@
                     </a>
                     <div class="child_menu">
                         <a href="{{ url('admin/users') }}">مدیریت کاربران</a>
-                        <a href="">اضافه کردن کاربر جدید</a>
+                        <a href="{{ url('admin/users/create') }}">اضافه کردن کاربر جدید</a>
                     </div>
                 </li>
             </ul>
