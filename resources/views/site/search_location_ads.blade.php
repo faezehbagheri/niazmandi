@@ -10,7 +10,7 @@
 
 
 
-    <div class="content col-8 px-0" style="padding-top:0px">
+    <div class="content  col-12 col-md-8 px-0" style="padding-top:0px">
 
         <div class="filter_list_box">
 
@@ -53,7 +53,7 @@
 
             </ul>
 
-            <div class="ads_content">
+            <div class="ads_content d-flex flex-wrap">
                 @include('include.ads',['ads'=>$ads])
             </div>
         </div>
@@ -61,5 +61,11 @@
 
     </div>
 
+    <div class="add_ads_btn fixed">
+        <div>
+            <span class="fa fa-plus"></span>
+            <a href="{{ url('ads/new') }}" id="add_new_ads">ثبت آگهی رایگان</a>
+        </div>
+    </div>
 
 @endsection

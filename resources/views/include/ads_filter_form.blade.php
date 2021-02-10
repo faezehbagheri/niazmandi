@@ -1,10 +1,8 @@
 <form id="filter_ads_form">
     {{ csrf_field() }}
-    <?php $r=0; ?>
+    <div class="col-12 d-flex flex-wrap">
     @foreach($catFilter as $key=>$value)
-
-        @if($r==0) <div class="row"> @endif
-            <div class="col-4">
+            <div class="col-12 col-sm-6 col-md-4 mt-3">
 
                 @if($value->filter_type==0)
                     <div class="col-6 input_filter_div">
@@ -61,25 +59,11 @@
 
                 @endif
             </div>
-
-            <?php $r++; ?>
-
-
-            @if($key==(sizeof($catFilter)-1) && $r!=3)
-
-        </div>
-        @endif
-
-        @if($r==3)
-        <?php $r=0; ?>
-        </div>
-        @endif
-
-
     @endforeach
+    </div>
 
 
-    <div class="form-group">
+    <div class="form-group mt-3">
         <button class="btn save_btn_search">ذخیره جست وجو</button>
     </div>
 

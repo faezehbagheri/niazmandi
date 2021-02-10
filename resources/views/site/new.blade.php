@@ -1,19 +1,25 @@
 @extends('layouts.site')
 
 @section('content')
+    <div class="back d-md-none">
+        <a href="{{ url('/') }}">
+            <span class="fa fa-arrow-right"></span>
+            <span>بازگشت</span>
+        </a>
+    </div>
 
-    <div class="new_ads_box col-6">
+    <div class="new_ads_box col-12 col-md-6">
         <h5>ثبت آگهی جدید</h5>
 
         <div class="row">
 
 
-            <div class="col">
+            <div class="col-sm-6 col-12">
                 <input type="text" name="ads_title" class="form-control" id="ads_title" placeholder="عنوان آگهی ...">
                 <p id="title_error_message" class="has_error"></p>
             </div>
 
-            <div class="col">
+            <div class="col-sm-6 col-12">
                 <div class="select_box form-control" onclick="show_cat_list()">
                     <span id="cat_list_name">انتخاب گروه آگهی</span>
                     <span class="fa fa-angle-down"></span>
@@ -24,7 +30,7 @@
 
         <div id="filter_box" style="padding-bottom: 20px" class="row">
 
-            <div class="col-6">
+            <div class="col-sm-6 col12" style="padding-top: 20px">
                 <div class="select_box form-control" onclick="show_location_list()">
                     <span id="area_name">انتخاب مکان</span>
                     <span class="fa fa-angle-down"></span>
@@ -53,12 +59,6 @@
                     <p>افزودن عکس</p>
                 </div>
 
-            </div>
-
-            <div class="pic_div2">
-                <div class="pic_div2_span">
-                    <span class="fa fa-camera"></span>
-                </div>
             </div>
 
             <div class="pic_div2">

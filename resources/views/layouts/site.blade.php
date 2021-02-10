@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" id="view" content="user-scalable=no, width=device-width minimum-scale=1, maximum-scale=1" />
     <title>نیازمندی ها</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ url('css/app.css') }}" rel="stylesheet">
@@ -13,7 +14,7 @@
 
         <div class="top_line"></div>
 
-        <div class="navbar">
+        <div class="navbar d-none d-md-flex">
 
             <ul class="list-inline col-8" id="nab_bar_menu">
                 <li><a href="/">صفحه اصلی</a></li>
@@ -54,8 +55,8 @@
         <footer id="footer">
 
 
-            <div style="margin: auto" class="col-8">
-                <ul class="list-inline footer_ul">
+            <div style="margin: auto" class="d-flex flex-wrap col-lg-8 col-12">
+                <ul class="list-inline footer_ul col-6 col-md-3">
                     <li>نیازمندی ها</li>
                     <li><a href="">
                             درباره نیازمندی های
@@ -71,8 +72,7 @@
 
                 </ul>
 
-
-                <ul class="list-inline footer_ul">
+                <ul class="list-inline footer_ul col-6 col-md-3">
                     <li>راهنمای مشتریان</li>
                     <li><a href="">
                             سوالات متداول
@@ -89,8 +89,7 @@
 
                 </ul>
 
-
-                <ul class="list-inline footer_ul">
+                <ul class="list-inline footer_ul col-6 col-md-3">
                     <li>خدمات مشتریان</li>
                     <li><a href="">
                             ارسال پیشنهادات
@@ -102,7 +101,7 @@
 
                 </ul>
 
-                <ul class="list-inline footer_ul left">
+                <ul class="list-inline footer_ul col-6 col-md-3">
                     <li>
                         <a href="" class="app-badge google-play"></a>
                     </li>
@@ -341,7 +340,7 @@
                     if(json[i].get_child.length>0)
                     {
 
-                        var html='<div id="filter_text_'+json[i].id+'"  class="col-6" style="padding-top:20px">' +
+                        var html='<div id="filter_text_'+json[i].id+'"  class="col-sm-6 col-12" style="padding-top:20px">' +
                             '<div class="select_box form-control" onclick="show_filter_box('+json[i].id+')">' +
                             '<span id="filter_span_'+json[i].id+'">'+json[i].filter_text+'</span>' +
                             '<span class="fa fa-angle-down"></span>' +
@@ -378,7 +377,7 @@
                         if(json[i].filter_type==0 || json[i].filter_type==1)
                         {
 
-                            var html='<div id="filter_text_'+json[i].id+'" class="col-6" style="padding-top:20px">' +
+                            var html='<div id="filter_text_'+json[i].id+'" class="col-sm-6 col-12" style="padding-top:20px">' +
                                 '<input type="text" id="filter_'+json[i].id+'"  class="form-control" placeholder="'+json[i].filter_text+'">' +
                                 '<p class="has_error"></p>' +
                                 '</div>';
@@ -388,7 +387,7 @@
                     }
                 }
 
-                $("#filter_box").append('<div class="col-6" style="padding-top:20px">' +
+                $("#filter_box").append('<div class="col-sm-6 col-12" style="padding-top:20px">' +
                     '<div class="select_box form-control" onclick="show_location_list()">' +
                     '<span id="area_name">انتخاب مکان</span>' +
                     '<span class="fa fa-angle-down"></span>' +
@@ -508,7 +507,7 @@
 
                     remove_pic($(this).parent().find('img').attr('src'));
                 });
-                if(images_count==5)
+                if(images_count==4)
                 {
                     $(".pic_div").remove();
                 }
@@ -532,7 +531,7 @@
             {
                 if(data=='ok')
                 {
-                    if(images_count==5)
+                    if(images_count==4)
                     {
                         var html='<div class="pic_div">' +
                             '<div class="pic_div_span">' +

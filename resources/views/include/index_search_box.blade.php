@@ -1,10 +1,10 @@
-<div class="index_search_box col-8">
+<div class="index_search_box d-flex col-lg-8 col-12">
 
 
-    <div class="col-4">
+    <div class="col-sm-4 col-10 px-0">
         <input type="text" name="seach" id="search" class="form-control"  placeholder="جست و جو ...">
     </div>
-    <div class="select_box form-control col-3" id="select_cat">
+    <div class="select_box form-control col-3 d-none d-sm-block" id="select_cat">
         <span class="box_title">
             @if(isset($cat_name))
                 {{ $cat_name  }}
@@ -15,7 +15,7 @@
         <span class="fa fa-angle-down"></span>
     </div>
 
-    <div class="select_box form-control col-3" onclick="show_location_list()">
+    <div class="select_box form-control col-3 d-none d-sm-block" onclick="show_location_list()">
         <span class="box_title" id="area_name">
             @if(isset($shahr_name))
                 {{ $shahr_name  }}
@@ -26,7 +26,11 @@
         <span class="fa fa-angle-down"></span>
     </div>
 
-    <div class="col-2 btn_search">
+    <div class="select_box form-control col-2 d-sm-none" onclick="show_location_list()">
+        <span class="fa fa-map-marker"></span>
+    </div>
+
+    <div class="col-2 btn_search d-none d-sm-block">
         <div>
             <span class="fa fa-search"></span>
             <span>جست و جو</span>

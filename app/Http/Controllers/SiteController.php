@@ -21,7 +21,7 @@ class SiteController extends Controller
 
         $newAds=Ads::with(['getFirstImage','getOstanName','getShahrName',
             'getFilter.filter_parent'])
-            ->where(['status'=>1])->OrderBy('created_at','DESC')->get();
+            ->where(['status'=>1])->OrderBy('created_at','DESC')->paginate(12);;
         $location=Ostan::with("getShahrs.getAreaFromShahr")->get();
 
         return view('site.index',['newAds'=>$newAds,'catList'=>$catList , 'location'=>$location]);
@@ -208,7 +208,8 @@ class SiteController extends Controller
                     'cat_name'=>$category->category_name,
                     'catList'=>$catList,
                     'location'=>$location,
-                    'shahr_name'=>$shahr_name
+                    'shahr_name'=>$shahr_name,
+                    'shahr_id'=>"ایران"
                 ]);
 
         }else {
@@ -268,7 +269,8 @@ class SiteController extends Controller
                     'cat_name'=>$category2->category_name,
                     'catList'=>$catList,
                     'location'=>$location,
-                    'shahr_name'=>$shahr_name ,
+                    'shahr_name'=>$shahr_name,
+                    'shahr_id'=>"ایران"
                 ]);
 
         }else {
