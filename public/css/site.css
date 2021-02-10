@@ -224,6 +224,7 @@ textarea{
     width:330px;
     height:35px;
     text-align:left !important;
+    outline: none !important;
 }
 
 .line {
@@ -517,6 +518,8 @@ a:hover{
     background: #eff0f1;
     padding-top:20px;
     margin-top:20px;
+    position: relative;
+    bottom: 0;
 }
 .footer_ul{
     margin-bottom: 0px;

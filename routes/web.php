@@ -14,12 +14,13 @@
 Route::get('/','SiteController@index');
 Route::get('/home','HomeController@index');
 
-Route::prefix("admin")->group(function(){
+Route::middleware('Admin')->prefix("admin")->group(function(){
     Route::get('/', 'AdminController@index');
     Route::resource('category','CategoryController')->except('show');
     Route::resource('location/ostan','OstanController')->except('show');
     Route::resource('location/shahr','ShahrController')->except('show');
     Route::resource('location/area','AreaController')->except('show');
+    Route::resource('user','UserController')->except('show');
     Route::resource('ads/filter','FilterController');
     Route::post('ads/filter/add_item','FilterController@add_item');
     Route::delete('ads/filter/del_item/{id}' , 'FilterController@del_item');
@@ -39,9 +40,11 @@ Route::get('مکان/{location_name}/{cat_url}','SiteController@getCatAds');
 Route::get('مکان/{location_name}/{cat_url}/{cat2_url}','SiteController@getCat2Ads');
 Route::post('ads_filter','SiteController@ads_filter');
 
-//Auth::routes();
+Auth::routes();
 
 
+Route::get('adminlogin','UserController@adminlogin_form')->name('adminlogin');
+Route::post('adminlogin','UserController@adminlogin');
 Route::get('login','UserController@login_form')->name('login');
 Route::post('login','UserController@login');
 Route::post('active_code','UserController@active_code');

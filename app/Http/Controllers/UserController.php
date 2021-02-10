@@ -17,8 +17,21 @@ class UserController extends Controller
     {
         $this->middleware('guest')->only(['login_form','login','active_code']);
     }
+    public function adminlogin_form(){
+        return view('user.admin_login');
+    }
     public function login_form(){
         return view('user.login_form');
+    }
+    public function adminlogin(Request $request){
+        $username=$request->get('username');
+        $user=User::where('username', $username)->first();
+        if($user){
+            Auth::login($user, true);
+            return redirect('/admin');
+        }else{
+
+        }
     }
     public function login(Request $request)
     {
@@ -70,6 +83,7 @@ class UserController extends Controller
                 $user_id=Cookie::get('user_id');
                 DB::table('ads')->where('user_id',$user_id)->update(['user_id'=>$user->id]);
                 Auth::login($user, true);
+                return redirect('/');
             }
             else
             {

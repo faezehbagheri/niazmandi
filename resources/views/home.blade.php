@@ -1,23 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.site')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
 
-                <div class="card-body">
+<div style="height: 350px">
+<div class="login_box d-flex align-items-center justify-content-center" style="height: 300px">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
+                        <h3 style="margin: auto">شما ثبت نام کرده اید!!</h3>
+</div>
 </div>
 @endsection

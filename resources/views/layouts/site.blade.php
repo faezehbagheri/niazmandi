@@ -34,7 +34,13 @@
                         <li><div class="dropdown-divider"></div></li>
                         <li><a class="dropdown-item" href="">پسندیده ها</a></li>
                         <li><a class="dropdown-item" href="">آگهی های من</a></li>
-                        <li><a class="dropdown-item" href="">جست و جو های من</a></li>
+                        <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">خروج از حساب کاربری</a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
                     </ul>
                 </li>
                 <li class="add_ads_btn">
