@@ -464,7 +464,7 @@ a:hover{
     float:right;
     margin-left:20px;
     margin-right:20px;
-    width:155px;
+    width:153px;
 }
 #catListBox .list-inline{
     padding-right:5px !important;
@@ -695,8 +695,8 @@ a:hover{
 }
 .carousel-item img{
     height:400px !important;
-    width:92% !important;
-    margin-right:4%;
+    width:80% !important;
+    margin-right:10%;
     margin-top:20px;
     margin-bottom:20px;
 }

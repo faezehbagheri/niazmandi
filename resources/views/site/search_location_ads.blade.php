@@ -3,7 +3,7 @@
 @section('content')
 
     @include('include.index_search_box',['location'=>$location , 'shahr_name'=>$shahr_name])
-    @include('include.CatList',['catList'=>$catList])
+    @include('include.CatList',['catList'=>$catList, 'shahr_name'=>$shahr_name])
 
 
     @include('include.adsCatList',['catList'=>$catList, 'shahr_name'=>$shahr_name,'shahr_id'=>$shahr_id])

@@ -11,7 +11,7 @@
 
                 @endif
                 <div>
-                    <a href="{{ url('ایران').'/'.$value->url }}">
+                    <a href="{{ url('مکان').'/'.$shahr_name.'/'.$value->url }}">
                         @if(!empty($value->icon))
                             <img src="{{ url('upload').'/'.$value->icon }}" class="cat_icon"/>
                         @endif
@@ -20,7 +20,7 @@
 
                     <ul class="list-inline">
                         @foreach($value->getChild as $key2=>$value2)
-                            <li><a href="{{ url('ایران').'/'.$value->url.'/'.$value2->url }}"><span>{{ $value2->category_name }}</span></a></li>
+                            <li><a href="{{ url('مکان').'/'.$shahr_name.'/'.$value->url.'/'.$value2->url }}"><span>{{ $value2->category_name }}</span></a></li>
                         @endforeach
                     </ul>
                 </div>

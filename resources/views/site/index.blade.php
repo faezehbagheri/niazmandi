@@ -13,7 +13,7 @@
 
 
     @include('include.index_search_box',['location'=>$location])
-    @include('include.CatList',['catList'=>$catList])
+    @include('include.CatList',['catList'=>$catList,'shahr_name'=>"ایران"])
 
 
     @include('include.adsCatList',['catList'=>$catList, 'shahr_name'=>"ایران",'shahr_id'=>"ایران"])
