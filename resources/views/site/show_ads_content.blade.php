@@ -12,12 +12,12 @@
 
 
                 <h4>{{ $ads->title }}</h4>
-                <?php $i=0; ?>
                 <table class="table">
+                    <tbody class="d-flex flex-wrap">
                     @foreach($ads->getAdsItem as $key=>$value)
-                        @if($i==0) <tr> @endif
+                        <tr class="col-6">
                             @if($value->getItemName)
-                                <td>
+                                <td class="w-100">
                                     <div>
                                         <span>{{ $value->getItemName->filter_name }}</span>
                                         @if($value->getItemValue)
@@ -42,17 +42,16 @@
                                      </span>
                                         @endif
                                     </div>
-                                </td>
-                                <?php $i++;
-                                ?>
+                                </td
                             @endif
-                            @if($i==2)  </tr> <?php $i=0 ?> @endif
+                        </tr>
 
                     @endforeach
+                    </tbody>
                 </table>
 
 
-                {{ nl2br($ads->tozihat) }}
+                <p>{{ nl2br($ads->tozihat) }}</p>
             </div>
 
             <div class="col-md-4">

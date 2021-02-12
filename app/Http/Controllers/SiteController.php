@@ -7,6 +7,7 @@ use App\Category;
 use App\Filter;
 use App\Ostan;
 //use Intervention\Image\Image;
+use App\Search;
 use App\Shahr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

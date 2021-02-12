@@ -714,6 +714,7 @@
     });
 
     send_filter_ads_form=function () {
+        // alert("kk");
         const form_data=$("#filter_ads_form").serialize();
         $.ajax({
             url:site_url+"/ads_filter",

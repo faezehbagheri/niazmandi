@@ -74,7 +74,7 @@
 
     </div>
 
-    <div class="add_ads_btn fixed">
+    <div class="add_ads_btn fixed d-md-none">
         <div>
             <span class="fa fa-plus"></span>
             <a href="{{ url('ads/new') }}" id="add_new_ads">ثبت آگهی رایگان</a>
