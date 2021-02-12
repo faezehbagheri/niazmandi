@@ -751,6 +751,23 @@ a:hover{
     margin-right: 10px;
     color: #545b62;
 }
+.user_info{
+    width: 95%;
+    height: 200px;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.1);
+    text-align: center;
+    background-color: white;
+}
+.user_info button{
+    width: 90%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #3490dc;
+    color: white;
+
+}
 @media (max-width: 576px) {
     .ads_box {
         height: 180px !important;
