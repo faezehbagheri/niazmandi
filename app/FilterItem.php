@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class FilterItem extends Model
 {
-    protected $table='filterItem';
+    protected $table='filteritem';
     public $timestamps=false;
     protected $fillable=['item_name','filter_id'];
 

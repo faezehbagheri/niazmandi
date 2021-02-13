@@ -18,6 +18,6 @@ class AdsFilter extends Model
     }
     public function getItemValue()
     {
-        return $this->hasOne(FilterItem::class,'id','filter_value');
+        return $this->hasOne(Filteritem::class,'id','filter_value');
     }
 }

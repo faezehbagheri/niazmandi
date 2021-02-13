@@ -14,7 +14,7 @@ class Filter extends Model
 
     }
     public function getChild(){
-        return $this->hasMany('App\FilterItem' ,'filter_id', 'id');
+        return $this->hasMany('App\Filteritem' ,'filter_id', 'id');
     }
     public function filterValue()
     {

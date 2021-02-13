@@ -29,11 +29,29 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'e2969a053f83d34d87b67f525524970bc53cb276',
+    'reference' => '6c6f0d83d426ddbc34f6c4dd9a634e2a7fde8772',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
   array (
+    'asm89/stack-cors' => 
+    array (
+      'pretty_version' => 'v2.0.2',
+      'version' => '2.0.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8d8f88b3b3830916be94292c1fbce84433efb1aa',
+    ),
+    'barryvdh/laravel-cors' => 
+    array (
+      'pretty_version' => 'v2.0.1',
+      'version' => '2.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'dbfc311b25d4873c3c2382b26860be3567492bd6',
+    ),
     'beyondcode/laravel-dump-server' => 
     array (
       'pretty_version' => '1.3.0',
@@ -447,7 +465,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'e2969a053f83d34d87b67f525524970bc53cb276',
+      'reference' => '6c6f0d83d426ddbc34f6c4dd9a634e2a7fde8772',
     ),
     'laravel/nexmo-notification-channel' => 
     array (

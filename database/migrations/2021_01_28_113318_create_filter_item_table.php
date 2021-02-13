@@ -13,7 +13,7 @@ class CreateFilterItemTable extends Migration
      */
     public function up()
     {
-        Schema::create('filterItem', function (Blueprint $table) {
+        Schema::create('filteritem', function (Blueprint $table) {
             $table->increments('id');
             $table->string('item_name');
             $table->integer('filter_id');
@@ -27,7 +27,7 @@ class CreateFilterItemTable extends Migration
      */
     public function down()
     {
-        Schema::table('filterItem', function (Blueprint $table) {
+        Schema::table('filteritem', function (Blueprint $table) {
             //
         });
     }

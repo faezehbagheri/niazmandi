@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Filter;
-use App\FilterItem;
+use App\Filteritem;
 use App\Http\Requests\FilterRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -62,9 +62,9 @@ class FilterController extends Controller
             foreach ($item as $key=>$value){
                 if(!empty($value)){
                     if($key>0){
-                        DB::table('filterItem')->where('id',$key)->update(['item_name'=>$value]);
+                        DB::table('Filteritem')->where('id',$key)->update(['item_name'=>$value]);
                     }else{
-                        DB::table('filterItem')->insert(['item_name'=>$value , 'filter_id'=>$filter_id]);
+                        DB::table('Filteritem')->insert(['item_name'=>$value , 'filter_id'=>$filter_id]);
 
                     }
                 }
@@ -73,7 +73,7 @@ class FilterController extends Controller
         return redirect()->back();
     }
      public function del_item($id){
-        $item = FilterItem::findOrFail($id);
+        $item = Filteritem::findOrFail($id);
         $item->delete();
         return redirect()->back();
      }
