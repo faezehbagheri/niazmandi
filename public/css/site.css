@@ -117,6 +117,12 @@ body{
     cursor: pointer;
 }
 
+.data_box #arrowright{
+    float: right;
+    display: none;
+    cursor: pointer;
+}
+
 .btn{
     border-radius: 0px;
 }

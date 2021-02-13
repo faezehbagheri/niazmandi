@@ -253,9 +253,10 @@
         $("#"+text+'_box_'+id).show();
         if(ostan_id==0)
         {
+            // alert("ddd");
             ostan_name=name;
             ostan_id=id;
-            $("#arrow_right").show();
+            $("#arrowright").show();
         }
         else if(shahr_id==0)
         {
@@ -291,27 +292,30 @@
         if(shahr_id>0)
         {
             shahr_id=0;
-            $('.child_menu2').hide();
+            $("#area_box_"+area_id).hide();
             $("#shahr_box_"+shahr_id).show();
         }
-        else if(ostan_id>0)
+        else if(ostan_id>0 && shahr_id==0)
         {
             ostan_id=0
             $('.shahr').hide();
             $("#ostan").show();
             $("#arrow_right").hide();
+            $("#arrowright").hide();
         }
     };
 
     back_cat_list=function () {
-        if(cat3_id>0)
+        // alert("dd");
+        if(cat2_id>0)
         {
-            cat3_id=0;
+            cat2_id=0;
             $('.child_menu2').hide();
             $("#cat_"+cat2_id).show();
         }
-        else if(cat2_id>0)
+        else if(cat1_id>0)
         {
+            cat1_id=0;
             $('.child_menu1').hide();
             $("#cat1").show();
             $("#arrow_right").hide();
